@@ -2,7 +2,7 @@ import { Schema, model, Document } from 'mongoose';
 
 const ctrlVehiculos = new Schema({
     fecha: {
-        type: Date
+        type: String
     },
 
     ruta: {
@@ -42,6 +42,16 @@ const ctrlVehiculos = new Schema({
     },
     
     placa: {
+        type: String
+    },
+    pico_placa: {
+        type: Boolean
+    },
+    
+    taller: {
+        type: Boolean
+    },
+    estado: {
         type: String
     }
 })

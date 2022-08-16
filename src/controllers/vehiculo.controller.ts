@@ -14,7 +14,7 @@ export async function creatVehiculo(req: Request, res: Response): Promise<Respon
     await vehiculo.save()
 
     return res.json({
-        message: 'Conductor creado',
+        message: true,
         vehiculo
     })
 }

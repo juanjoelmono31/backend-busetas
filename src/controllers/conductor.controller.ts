@@ -13,7 +13,7 @@ export async function creatConductor(req: Request, res: Response): Promise<Respo
     await conductor.save()
 
     return res.json({
-        message: 'Conductor creado',
+        message: true,
         conductor
     })
 }

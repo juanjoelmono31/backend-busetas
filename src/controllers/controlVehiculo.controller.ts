@@ -4,19 +4,19 @@ import {Request, Response} from 'express';
 //Creacion de control 
 export async function creatCtrlVehiculo(req: Request, res: Response): Promise<Response> {
     const {fecha, ruta, numero_vueltas, numero_buseta, placa,
-        reg_salida, reg_llegada, gastos, total_gastos, neto_total } = req.body
+        reg_salida, reg_llegada, gastos, total_gastos, neto_total, pico_placa, taller, estado, conductor } = req.body
 
     const newCtrlVehiculo = {
         fecha: fecha, ruta: ruta, numero_vueltas: numero_vueltas, numero_buseta: numero_buseta, placa: placa,
         reg_salida: reg_salida, reg_llegada: reg_llegada, gastos: gastos, total_gastos: total_gastos,
-        neto_total: neto_total
+        neto_total: neto_total, pico_placa: pico_placa, taller: taller, estado: estado, conductor:conductor
     }
 
     const ctrlVehiculos = new CtrlVehiculos(newCtrlVehiculo)
     await ctrlVehiculos.save()
 
     return res.json({
-        message: 'Conductor creado',
+        message: true,
         ctrlVehiculos
     })
 }

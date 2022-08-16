@@ -10,5 +10,11 @@ router.post('/',multer.single('tarjeta_propiedad'), vehiculoController.creatVehi
 //http://localhost:5000/vehiculo
 router.get('/', vehiculoController.findAllVehiculos)
 
+//http://localhost:5000/vehiculo/id
+router.get('/:id', vehiculoController.findOneVehiculo)
+
+//http://localhost:5000/vehiculo/id
+router.delete('/:id', vehiculoController.deleteVehiculo)
+
 
 export default router;

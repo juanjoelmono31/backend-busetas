@@ -9,4 +9,12 @@ router.post('/', ctrlVehiculoController.creatCtrlVehiculo)
 //http://localhost:5000/control
 router.get('/', ctrlVehiculoController.findAllCtrlVehiculos)
 
+//http://localhost:5000/control/id
+router.get('/:id', ctrlVehiculoController.findOneCtrlVehiculos)
+
+//http://localhost:5000/control
+router.delete('/:id', ctrlVehiculoController.deleteCtrlVehiculos)
+
+
+
 export default router;
