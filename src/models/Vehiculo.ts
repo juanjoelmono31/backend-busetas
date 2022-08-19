@@ -13,9 +13,9 @@ const vehiculoSchema = new Schema({
         type: String
     }, 
 
-    conductor: {
-        type: String
-    },
+    // conductor: {
+    //     type: String
+    // },
 
     tarjeta_propiedad: {
         type: String

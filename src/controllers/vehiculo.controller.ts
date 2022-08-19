@@ -3,10 +3,10 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo, conductor } = req.body
+    const {placa, propietario, modelo } = req.body
 
     const newVehiculo = {
-        placa: placa, propietario: propietario, modelo: modelo, conductor: conductor, 
+        placa: placa, propietario: propietario, modelo: modelo, 
         tarjeta_propiedad: req.file?.path
     }
 
