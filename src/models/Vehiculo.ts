@@ -5,6 +5,10 @@ const vehiculoSchema = new Schema({
         type: String
     },
 
+    numero: {
+        type: Number
+    },
+    
     propietario: {
         type: String
     },
@@ -12,6 +16,22 @@ const vehiculoSchema = new Schema({
     modelo: {
         type: String
     }, 
+
+    rodamiento:{
+        type: String
+    },
+
+    poliza: {
+        type: String
+    },
+
+    mantenimiento: {
+        type: Object
+    },
+
+    taller: {
+        type: Object
+    },
 
     // conductor: {
     //     type: String

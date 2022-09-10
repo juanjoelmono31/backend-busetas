@@ -5,6 +5,7 @@ import path from 'path';
 import conductorRoutes from './routes/conductor.routes'
 import vehiculoRoutes from './routes/vehiculo.routes'
 import ctrlVehiculoRoutes from './routes/ctrlVehiculo.routes'
+import configVariblesRoutes from './routes/configVariables.routes'
 
 
 const app = express() 
@@ -31,5 +32,6 @@ app.use('/uploads', express.static(path.resolve('uploads')));
 app.use('/conductor', conductorRoutes)
 app.use('/vehiculo', vehiculoRoutes)
 app.use('/control', ctrlVehiculoRoutes)
+app.use('/variables', configVariblesRoutes)
 
 export default app;

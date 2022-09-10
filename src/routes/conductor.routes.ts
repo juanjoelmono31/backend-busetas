@@ -9,8 +9,8 @@ router.post('/', conductorController.creatConductor)
 //http://localhost:5000/conductor
 router.get('/', conductorController.findAllConductor)
 
-//http://localhost:5000/conductor/id
-router.get('/:id', conductorController.findOneConductor)
+//http://localhost:5000/conductor/cedula
+router.get('/:cedula', conductorController.findOneConductor)
 
 //http://localhost:5000/conductor/id
 router.delete('/:id', conductorController.deleteConductor)

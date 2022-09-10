@@ -16,5 +16,8 @@ router.get('/:id', vehiculoController.findOneVehiculo)
 //http://localhost:5000/vehiculo/id
 router.delete('/:id', vehiculoController.deleteVehiculo)
 
+//
+router.put('/:id',vehiculoController.updateMantenimiento)
+
 
 export default router;

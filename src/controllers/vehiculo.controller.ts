@@ -3,11 +3,11 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo } = req.body
+    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento } = req.body
 
     const newVehiculo = {
-        placa: placa, propietario: propietario, modelo: modelo, 
-        tarjeta_propiedad: req.file?.path
+        placa: placa, propietario: propietario, modelo: modelo, numero: numero, poliza: poliza,
+        mantenimiento: mantenimiento, taller: taller, rodamiento, tarjeta_propiedad: req.file?.path
     }
 
     const vehiculo = new Vehiculo(newVehiculo)
@@ -43,4 +43,20 @@ export async function deleteVehiculo(req: Request, res: Response) : Promise<Resp
      vehiculo
     })
  }
+
+ //Actulizar campos
+ 
+ export async function updateMantenimiento(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params
+    const { mantenimiento, taller  } = req.body
+    const updatedMantenimiento = await Vehiculo.findByIdAndUpdate(id, {
+        mantenimiento,
+        taller
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updatedMantenimiento
+    })
+}
 

@@ -25,12 +25,16 @@ export async function findAllConductor(req: Request, res: Response): Promise<Res
     return res.json(conductor)
 }
 
-//Buscar conductor por id
+//Buscar conductor por cedula
 export async function findOneConductor(req: Request, res: Response): Promise<Response> {
-    const { id } = req.params
-    const conductor = await Conductor.findById(id)
+    //const { id } = req.params
+    console.log('aca', req.params.cedula)
+    const conductor = await Conductor.find({cedula: req.params.cedula})
 
-    return res.json(conductor)
+    return res.json({
+        message: true,
+        conductor
+       })
 }
 
 //Borrar conductor por id 
