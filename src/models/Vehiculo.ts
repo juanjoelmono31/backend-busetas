@@ -18,11 +18,7 @@ const vehiculoSchema = new Schema({
     }, 
 
     rodamiento:{
-        type: String
-    },
-
-    poliza: {
-        type: String
+        type: Object
     },
 
     mantenimiento: {
@@ -39,7 +35,8 @@ const vehiculoSchema = new Schema({
 
     tarjeta_propiedad: {
         type: String
-    }
+    },
+    
 })
 
 export default model('Vehiculo', vehiculoSchema)

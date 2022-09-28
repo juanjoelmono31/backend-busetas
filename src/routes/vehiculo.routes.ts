@@ -19,5 +19,9 @@ router.delete('/:id', vehiculoController.deleteVehiculo)
 //
 router.put('/:id',vehiculoController.updateMantenimiento)
 
+router.put('/rodamiento/:id',vehiculoController.updateRodamiento)
+
+
+
 
 export default router;

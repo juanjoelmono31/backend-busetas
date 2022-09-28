@@ -6,7 +6,7 @@ export async function creatVehiculo(req: Request, res: Response): Promise<Respon
     const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento } = req.body
 
     const newVehiculo = {
-        placa: placa, propietario: propietario, modelo: modelo, numero: numero, poliza: poliza,
+        placa: placa, propietario: propietario, modelo: modelo, numero: numero, 
         mantenimiento: mantenimiento, taller: taller, rodamiento, tarjeta_propiedad: req.file?.path
     }
 
@@ -57,6 +57,19 @@ export async function deleteVehiculo(req: Request, res: Response) : Promise<Resp
     return res.json({
         message: 'Succesfully update',
         updatedMantenimiento
+    })
+}
+
+export async function updateRodamiento(req: Request, res: Response){
+    const { id } = req.params
+    const { rodamiento} = req.body
+    const updatedRodamiento = await Vehiculo.findByIdAndUpdate(id, {
+        rodamiento
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updatedRodamiento
     })
 }
 

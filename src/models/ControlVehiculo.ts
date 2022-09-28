@@ -6,7 +6,7 @@ const ctrlVehiculos = new Schema({
     },
 
     ruta: {
-        type: Number
+        type: String
     },
 
     numero_vueltas: {
@@ -38,7 +38,7 @@ const ctrlVehiculos = new Schema({
     },
 
     conductor: {
-        type: String
+        type: Object
     },
     
     placa: {

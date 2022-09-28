@@ -6,6 +6,7 @@ import conductorRoutes from './routes/conductor.routes'
 import vehiculoRoutes from './routes/vehiculo.routes'
 import ctrlVehiculoRoutes from './routes/ctrlVehiculo.routes'
 import configVariblesRoutes from './routes/configVariables.routes'
+import rodamientoRoutes from './routes/rodamiento.routes'
 
 
 const app = express() 
@@ -33,5 +34,6 @@ app.use('/conductor', conductorRoutes)
 app.use('/vehiculo', vehiculoRoutes)
 app.use('/control', ctrlVehiculoRoutes)
 app.use('/variables', configVariblesRoutes)
+app.use('/rodamiento', rodamientoRoutes)
 
 export default app;
