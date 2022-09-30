@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const rodamientoSchema = new Schema({
     numero_buseta: {
-        type: String
+        type: Object
     },
 
     hora: {

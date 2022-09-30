@@ -3,10 +3,10 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatConductor(req: Request, res: Response): Promise<Response> {
-    const {nombre, numero_celular, cedula, vehiculo } = req.body
+    const {nombre, numero_celular, cedula, vehiculo, rol } = req.body
 
     const newConductor = {
-        nombre: nombre, numero_celular: numero_celular, cedula: cedula, vehiculo: vehiculo
+        nombre: nombre, numero_celular: numero_celular, cedula: cedula, vehiculo: vehiculo, rol: rol
     }
 
     const conductor = new Conductor(newConductor)

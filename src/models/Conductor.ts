@@ -15,6 +15,10 @@ const conductorSchema = new Schema({
     },
     vehiculo: {
         type: String
+    },
+
+    rol: {
+        type: String
     }
 }, {
     versionKey: false,
