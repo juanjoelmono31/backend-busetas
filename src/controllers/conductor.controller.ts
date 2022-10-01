@@ -47,3 +47,18 @@ export async function deleteConductor(req: Request, res: Response) : Promise<Res
     })
  }
 
+ //Actualixar computador por id
+ export async function updateConductor(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params
+    const { vehiculo  } = req.body
+    const updatedConductor = await Conductor.findByIdAndUpdate(id, {
+        vehiculo
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updatedConductor
+    })
+}
+
+

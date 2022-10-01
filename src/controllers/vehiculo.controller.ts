@@ -26,7 +26,7 @@ export async function findAllVehiculos(req: Request, res: Response): Promise<Res
     return res.json(vehiculo)
 }
 
-//Buscar conductor por id
+//Buscar vehiculo por id
 export async function findOneVehiculo(req: Request, res: Response): Promise<Response> {
     const { id } = req.params
     const vehiculo = await Vehiculo.findById(id)
