@@ -25,8 +25,16 @@ const ctrlVehiculos = new Schema({
         type: Number
     },
 
-    gastos: {
+    otros: {
         type: Object
+    },
+
+    acpm: {
+        type: Number
+    },
+
+    montaje_llantas: {
+        type: Number
     },
 
     total_gastos: {
@@ -53,6 +61,9 @@ const ctrlVehiculos = new Schema({
     },
     estado: {
         type: String
+    },
+    bonificacion: {
+        type: Number
     }
 })
 

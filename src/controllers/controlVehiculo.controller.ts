@@ -4,12 +4,13 @@ import {Request, Response} from 'express';
 //Creacion de control 
 export async function creatCtrlVehiculo(req: Request, res: Response): Promise<Response> {
     const {fecha, ruta, numero_vueltas, numero_buseta, placa,
-        reg_salida, reg_llegada, gastos, total_gastos, neto_total, pico_placa, taller, estado, conductor } = req.body
+        reg_salida, reg_llegada, otros, total_gastos, neto_total, pico_placa, taller, estado, conductor, acpm, montaje_llantas, bonificacion } = req.body
 
     const newCtrlVehiculo = {
         fecha: fecha, ruta: ruta, numero_vueltas: numero_vueltas, numero_buseta: numero_buseta, placa: placa,
-        reg_salida: reg_salida, reg_llegada: reg_llegada, gastos: gastos, total_gastos: total_gastos,
-        neto_total: neto_total, pico_placa: pico_placa, taller: taller, estado: estado, conductor:conductor
+        reg_salida: reg_salida, reg_llegada: reg_llegada, otros: otros, total_gastos: total_gastos,
+        neto_total: neto_total, pico_placa: pico_placa, taller: taller, estado: estado, conductor:conductor, acpm: acpm, 
+        montaje_llantas: montaje_llantas, bonificacion: bonificacion
     }
 
     const ctrlVehiculos = new CtrlVehiculos(newCtrlVehiculo)
