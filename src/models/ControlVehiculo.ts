@@ -64,6 +64,10 @@ const ctrlVehiculos = new Schema({
     },
     bonificacion: {
         type: Number
+    },
+
+    otros_gastos: {
+        type: Number
     }
 })
 
