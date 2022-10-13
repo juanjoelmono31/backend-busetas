@@ -21,6 +21,8 @@ router.put('/:id',vehiculoController.updateMantenimiento)
 
 router.put('/rodamiento/:id',vehiculoController.updateRodamiento)
 
+router.put('/netos/:id',vehiculoController.updateNetoTotal)
+
 
 
 

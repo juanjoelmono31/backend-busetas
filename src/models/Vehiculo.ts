@@ -29,6 +29,10 @@ const vehiculoSchema = new Schema({
         type: Object
     },
 
+    netoTotal: {
+        type: Number
+    },
+
     // conductor: {
     //     type: String
     // },

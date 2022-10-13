@@ -3,11 +3,11 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento } = req.body
+    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal } = req.body
 
     const newVehiculo = {
         placa: placa, propietario: propietario, modelo: modelo, numero: numero, 
-        mantenimiento: mantenimiento, taller: taller, rodamiento, tarjeta_propiedad: req.file?.path
+        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, tarjeta_propiedad: req.file?.path
     }
 
     const vehiculo = new Vehiculo(newVehiculo)
@@ -70,6 +70,20 @@ export async function updateRodamiento(req: Request, res: Response){
     return res.json({
         message: 'Succesfully update',
         updatedRodamiento
+    })
+}
+// update campo valor suma Neto total busetas para valores diarios 
+
+export async function updateNetoTotal(req: Request, res: Response){
+    const { id } = req.params
+    const { netoTotal} = req.body
+    const updateNetoTotal = await Vehiculo.findByIdAndUpdate(id, {
+        netoTotal
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updateNetoTotal
     })
 }
 
