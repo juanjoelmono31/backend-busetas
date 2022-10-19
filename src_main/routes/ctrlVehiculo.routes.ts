@@ -15,8 +15,6 @@ router.get('/:id', ctrlVehiculoController.findOneCtrlVehiculos)
 //http://localhost:5000/control
 router.delete('/:id', ctrlVehiculoController.deleteCtrlVehiculos)
 
-router.put('/:id', ctrlVehiculoController.updateOtrosGastos)
-
 
 
 export default router;

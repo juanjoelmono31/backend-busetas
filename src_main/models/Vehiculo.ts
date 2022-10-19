@@ -5,10 +5,6 @@ const vehiculoSchema = new Schema({
         type: String
     },
 
-    numero: {
-        type: Number
-    },
-    
     propietario: {
         type: String
     },
@@ -17,30 +13,13 @@ const vehiculoSchema = new Schema({
         type: String
     }, 
 
-    rodamiento:{
-        type: Object
-    },
-
-    mantenimiento: {
-        type: Object
-    },
-
-    taller: {
-        type: Object
-    },
-
-    netoTotal: {
-        type: Number
-    },
-
     // conductor: {
     //     type: String
     // },
 
     tarjeta_propiedad: {
         type: String
-    },
-    
+    }
 })
 
 export default model('Vehiculo', vehiculoSchema)

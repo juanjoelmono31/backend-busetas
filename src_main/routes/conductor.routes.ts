@@ -13,9 +13,6 @@ router.get('/', conductorController.findAllConductor)
 router.get('/:cedula', conductorController.findOneConductor)
 
 //http://localhost:5000/conductor/id
-router.put('/:id', conductorController.updateConductor)
-
-//http://localhost:5000/conductor/id
 router.delete('/:id', conductorController.deleteConductor)
 
 export default router;

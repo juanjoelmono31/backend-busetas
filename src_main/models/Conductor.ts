@@ -12,13 +12,6 @@ const conductorSchema = new Schema({
     cedula: {
         type: Number,
         unique: true
-    },
-    vehiculo: {
-        type: String
-    },
-
-    rol: {
-        type: String
     }
 }, {
     versionKey: false,

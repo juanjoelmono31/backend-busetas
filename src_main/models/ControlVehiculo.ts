@@ -6,7 +6,7 @@ const ctrlVehiculos = new Schema({
     },
 
     ruta: {
-        type: String
+        type: Number
     },
 
     numero_vueltas: {
@@ -25,16 +25,8 @@ const ctrlVehiculos = new Schema({
         type: Number
     },
 
-    otros: {
+    gastos: {
         type: Object
-    },
-
-    acpm: {
-        type: Number
-    },
-
-    montaje_llantas: {
-        type: Number
     },
 
     total_gastos: {
@@ -46,7 +38,7 @@ const ctrlVehiculos = new Schema({
     },
 
     conductor: {
-        type: Object
+        type: String
     },
     
     placa: {
@@ -61,13 +53,6 @@ const ctrlVehiculos = new Schema({
     },
     estado: {
         type: String
-    },
-    bonificacion: {
-        type: Number
-    },
-
-    otros_gastos: {
-        type: Number
     }
 })
 

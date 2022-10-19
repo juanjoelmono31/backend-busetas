@@ -4,13 +4,12 @@ import {Request, Response} from 'express';
 //Creacion de control 
 export async function creatCtrlVehiculo(req: Request, res: Response): Promise<Response> {
     const {fecha, ruta, numero_vueltas, numero_buseta, placa,
-        reg_salida, reg_llegada, otros, total_gastos, neto_total, pico_placa, taller, estado, conductor, acpm, montaje_llantas, bonificacion, otros_gastos } = req.body
+        reg_salida, reg_llegada, gastos, total_gastos, neto_total, pico_placa, taller, estado, conductor } = req.body
 
     const newCtrlVehiculo = {
         fecha: fecha, ruta: ruta, numero_vueltas: numero_vueltas, numero_buseta: numero_buseta, placa: placa,
-        reg_salida: reg_salida, reg_llegada: reg_llegada, otros: otros, total_gastos: total_gastos,
-        neto_total: neto_total, pico_placa: pico_placa, taller: taller, estado: estado, conductor:conductor, acpm: acpm, 
-        montaje_llantas: montaje_llantas, bonificacion: bonificacion, otros_gastos: otros_gastos
+        reg_salida: reg_salida, reg_llegada: reg_llegada, gastos: gastos, total_gastos: total_gastos,
+        neto_total: neto_total, pico_placa: pico_placa, taller: taller, estado: estado, conductor:conductor
     }
 
     const ctrlVehiculos = new CtrlVehiculos(newCtrlVehiculo)
@@ -46,17 +45,3 @@ export async function deleteCtrlVehiculos(req: Request, res: Response) : Promise
      ctrlVehiculos
     })
  }
-
- //Update
- export async function updateOtrosGastos(req: Request, res: Response): Promise<Response> {
-    const { id } = req.params
-    const { otros_gastos  } = req.body
-    const updatedOtrosGastos = await CtrlVehiculos.findByIdAndUpdate(id, {
-        otros_gastos
-    })
-
-    return res.json({
-        message: 'Succesfully update',
-        updatedOtrosGastos
-    })
-}

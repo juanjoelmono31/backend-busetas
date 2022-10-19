@@ -3,10 +3,10 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatConductor(req: Request, res: Response): Promise<Response> {
-    const {nombre, numero_celular, cedula, vehiculo, rol } = req.body
+    const {nombre, numero_celular, cedula } = req.body
 
     const newConductor = {
-        nombre: nombre, numero_celular: numero_celular, cedula: cedula, vehiculo: vehiculo, rol: rol
+        nombre: nombre, numero_celular: numero_celular, cedula: cedula
     }
 
     const conductor = new Conductor(newConductor)
@@ -46,19 +46,4 @@ export async function deleteConductor(req: Request, res: Response) : Promise<Res
      conductor
     })
  }
-
- //Actualixar computador por id
- export async function updateConductor(req: Request, res: Response): Promise<Response> {
-    const { id } = req.params
-    const { vehiculo  } = req.body
-    const updatedConductor = await Conductor.findByIdAndUpdate(id, {
-        vehiculo
-    })
-
-    return res.json({
-        message: 'Succesfully update',
-        updatedConductor
-    })
-}
-
 
