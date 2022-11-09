@@ -12,6 +12,8 @@ router.get('/', ctrlVehiculoController.findAllCtrlVehiculos)
 //http://localhost:5000/control/id
 router.get('/:id', ctrlVehiculoController.findOneCtrlVehiculos)
 
+router.get('/placa/:placa', ctrlVehiculoController.findOnePlaca)
+
 //http://localhost:5000/control
 router.delete('/:id', ctrlVehiculoController.deleteCtrlVehiculos)
 

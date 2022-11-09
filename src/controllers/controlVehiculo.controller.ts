@@ -37,6 +37,18 @@ export async function findOneCtrlVehiculos(req: Request, res: Response): Promise
     return res.json(ctrlVehiculos)
 }
 
+//Buscar placas en control de rutas
+export async function findOnePlaca(req: Request, res: Response) {
+    console.log('Aca esta la placa', req.params.placa);
+    const Placa = await CtrlVehiculos.find({placa: req.params.placa})
+
+    return res.json({
+        message: true,
+        Placa
+       })
+    
+}
+
 //Borrar conductor por id 
 export async function deleteCtrlVehiculos(req: Request, res: Response) : Promise<Response>{
     const { id } = req.params

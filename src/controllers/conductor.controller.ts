@@ -37,6 +37,8 @@ export async function findOneConductor(req: Request, res: Response): Promise<Res
        })
 }
 
+
+
 //Borrar conductor por id 
 export async function deleteConductor(req: Request, res: Response) : Promise<Response>{
     const { id } = req.params
@@ -46,6 +48,8 @@ export async function deleteConductor(req: Request, res: Response) : Promise<Res
      conductor
     })
  }
+
+ 
 
  //Actualixar computador por id
  export async function updateConductor(req: Request, res: Response): Promise<Response> {
