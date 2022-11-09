@@ -7,13 +7,13 @@ import vehiculoRoutes from './routes/vehiculo.routes'
 import ctrlVehiculoRoutes from './routes/ctrlVehiculo.routes'
 import configVariblesRoutes from './routes/configVariables.routes'
 import rodamientoRoutes from './routes/rodamiento.routes'
-
+import rutasRoutes from './routes/rutas.routes'
 
 const app = express() 
 
 
 //Settings 
-app.set('port', process.env.PORT || 4000)
+app.set('port', process.env.PORT || 3000)
 app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
@@ -35,5 +35,6 @@ app.use('/vehiculo', vehiculoRoutes)
 app.use('/control', ctrlVehiculoRoutes)
 app.use('/variables', configVariblesRoutes)
 app.use('/rodamiento', rodamientoRoutes)
+app.use('/rutas', rutasRoutes)
 
 export default app;
