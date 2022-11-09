@@ -13,8 +13,8 @@ const app = express()
 
 
 //Settings 
-app.set('port', process.env.PORT || 3000)
-app.use(express.json())
+app.set('port', process.env.PORT || 4000)
+app.use(express.json()) 
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(morgan('dev'))
