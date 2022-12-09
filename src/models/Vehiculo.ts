@@ -40,6 +40,14 @@ const vehiculoSchema = new Schema({
     tarjeta_propiedad: {
         type: String
     },
+
+    pico_placa: {
+        type: Object
+    },
+
+    estado: {
+        type: String
+    }
     
 })
 

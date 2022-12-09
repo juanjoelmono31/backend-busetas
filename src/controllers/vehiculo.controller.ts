@@ -3,11 +3,11 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal } = req.body
+    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal, pico_placa, estado } = req.body
 
     const newVehiculo = {
         placa: placa, propietario: propietario, modelo: modelo, numero: numero, 
-        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, tarjeta_propiedad: req.file?.path
+        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, pico_placa: pico_placa, estado: estado, tarjeta_propiedad: req.file?.path
     }
 
     const vehiculo = new Vehiculo(newVehiculo)
@@ -60,6 +60,7 @@ export async function deleteVehiculo(req: Request, res: Response) : Promise<Resp
     })
 }
 
+//Update rodamiento
 export async function updateRodamiento(req: Request, res: Response){
     const { id } = req.params
     const { rodamiento} = req.body
@@ -85,5 +86,21 @@ export async function updateNetoTotal(req: Request, res: Response){
         message: 'Succesfully update',
         updateNetoTotal
     })
+}
+
+//update pico y placa con estado
+export async function updatePico_placaYestado(req: Request, res: Response) {
+    const { id } = req.params
+    const {pico_placa, estado} = req.body
+    const updatedPico_placaYestado = await Vehiculo.findByIdAndUpdate(id, {
+        pico_placa,
+        estado
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updatedPico_placaYestado
+    })
+    
 }
 
