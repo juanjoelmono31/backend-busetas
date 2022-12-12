@@ -78,9 +78,9 @@ export async function updateRodamiento(req: Request, res: Response){
 
 export async function updateNetoTotal(req: Request, res: Response){
     const { id } = req.params
-    const { netoTotal} = req.body
+    const { gastos_admin} = req.body
     const updateNetoTotal = await Vehiculo.findByIdAndUpdate(id, {
-        netoTotal
+        gastos_admin
     })
 
     return res.json({
