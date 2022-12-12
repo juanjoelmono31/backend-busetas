@@ -3,11 +3,12 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal, pico_placa, estado } = req.body
+    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal, pico_placa, estado, gastos_admin } = req.body
 
     const newVehiculo = {
         placa: placa, propietario: propietario, modelo: modelo, numero: numero, 
-        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, pico_placa: pico_placa, estado: estado, tarjeta_propiedad: req.file?.path
+        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, pico_placa: pico_placa, estado: estado, 
+        tarjeta_propiedad: req.file?.path, gastos_admin: gastos_admin
     }
 
     const vehiculo = new Vehiculo(newVehiculo)

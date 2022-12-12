@@ -47,6 +47,10 @@ const vehiculoSchema = new Schema({
 
     estado: {
         type: String
+    },
+
+    gastos_admin: {
+        type: Object
     }
     
 })
