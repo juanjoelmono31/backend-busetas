@@ -26,6 +26,10 @@ router.put('/netos/:id',vehiculoController.updateNetoTotal)
 router.put('/picoplaca/:id', vehiculoController.updatePico_placaYestado)
 
 
+router.put('/gastosAdmin/:id', vehiculoController.updateGastosAdmin)
+
+router.put('/mantenimientoTaller/:id', vehiculoController.updateMantenimiento)
+
 
 
 export default router;

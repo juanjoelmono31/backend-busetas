@@ -3,11 +3,11 @@ import {Request, Response} from 'express';
 
 //Creacion de conductor 
 export async function creatVehiculo(req: Request, res: Response): Promise<Response> {
-    const {placa, propietario, modelo, numero, poliza, mantenimiento, taller, rodamiento, netoTotal, pico_placa, estado, gastos_admin } = req.body
+    const {placa, propietario, modelo, numero, poliza, mantenimiento_taller, rodamiento, netoTotal, pico_placa, estado, gastos_admin } = req.body
 
     const newVehiculo = {
         placa: placa, propietario: propietario, modelo: modelo, numero: numero, 
-        mantenimiento: mantenimiento, taller: taller, rodamiento, netoTotal, pico_placa: pico_placa, estado: estado, 
+        mantenimiento_taller: mantenimiento_taller, rodamiento, netoTotal, pico_placa: pico_placa, estado: estado, 
         tarjeta_propiedad: req.file?.path, gastos_admin: gastos_admin
     }
 
@@ -49,14 +49,13 @@ export async function deleteVehiculo(req: Request, res: Response) : Promise<Resp
  
  export async function updateMantenimiento(req: Request, res: Response): Promise<Response> {
     const { id } = req.params
-    const { mantenimiento, taller  } = req.body
+    const { mantenimiento_taller  } = req.body
     const updatedMantenimiento = await Vehiculo.findByIdAndUpdate(id, {
-        mantenimiento,
-        taller
+        mantenimiento_taller
     })
 
     return res.json({
-        message: 'Succesfully update',
+        message: 'Succesfully update mantenimiento',
         updatedMantenimiento
     })
 }
@@ -104,4 +103,34 @@ export async function updatePico_placaYestado(req: Request, res: Response) {
     })
     
 }
+
+//update gatsos admin por placa 
+export async function updateGastosAdmin(req: Request, res: Response) {
+    const { id } = req.params
+    const {gastos_admin } = req.body
+    const updatedGastosAdmin = await Vehiculo.findByIdAndUpdate(id, {
+        gastos_admin
+        
+    })
+
+    return res.json({
+        message: 'Succesfully update gastos',
+        updatedGastosAdmin
+    })
+    
+}
+
+//update mantenimiento y taller 
+// export async function updateMantenimiento_taller(req: Request, res: Response){
+//     const { id } = req.params
+//     const { mantenimiento_taller} = req.body
+//     const updatedMantenimiento_taller = await Vehiculo.findByIdAndUpdate(id, {
+//         mantenimiento_taller
+//     })
+
+//     return res.json({
+//         message: 'Succesfully update mantenimiento y taller ',
+//         updatedMantenimiento_taller
+//     })
+// }
 

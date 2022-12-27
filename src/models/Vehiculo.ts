@@ -21,7 +21,7 @@ const vehiculoSchema = new Schema({
         type: Object
     },
 
-    mantenimiento: {
+    mantenimiento_taller: {
         type: Object
     },
 
