@@ -104,6 +104,21 @@ export async function updatePico_placaYestado(req: Request, res: Response) {
     
 }
 
+//update Estado
+export async function updateEstado(req: Request, res: Response) {
+    const { id } = req.params
+    const {estado} = req.body
+    const updatedEstado = await Vehiculo.findByIdAndUpdate(id, {
+        estado
+    })
+
+    return res.json({
+        message: 'Succesfully update',
+        updatedEstado
+    })
+}
+
+
 //update gatsos admin por placa 
 export async function updateGastosAdmin(req: Request, res: Response) {
     const { id } = req.params

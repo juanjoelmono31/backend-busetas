@@ -25,6 +25,9 @@ router.put('/netos/:id',vehiculoController.updateNetoTotal)
 
 router.put('/picoplaca/:id', vehiculoController.updatePico_placaYestado)
 
+//http://localhost:5000/vehiculo/estado/id
+router.put('/estado/:id', vehiculoController.updateEstado)
+
 
 router.put('/gastosAdmin/:id', vehiculoController.updateGastosAdmin)
 
